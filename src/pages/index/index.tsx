@@ -1,6 +1,11 @@
 import Taro, { Component, Config } from '@tarojs/taro'
-import { View, Text } from '@tarojs/components'
+import { View, Text, Swiper, SwiperItem} from '@tarojs/components'
+import ListItem from '../../components/ListItem'
+import LabelTitle from '../../components/LabelTitle'
 import './index.scss'
+import img1 from '../../assert/images/swiper1.jpg'
+import img2 from '../../assert/images/swiper2.png'
+import img3 from '../../assert/images/swiper3.png'
 
 export default class Index extends Component {
 
@@ -25,10 +30,26 @@ export default class Index extends Component {
     navigationBarTitleText: '首页'
   }
 
-  render () {
+  skipToDetail({title, description}) {
+    Taro.navigateTo({
+      url: `/pages/detail/index?title=${title}&description=${description}`
+    })
+  }
+
+
+  render() {
+    const listSet = [
+      {title: '标题一', description: '描述一'},
+      {title: '标题二', description: '描述二'},
+      {title: '标题三', description: '描述三'},
+    ]
     return (
       <View className='index'>
-        <Text>Hello world!</Text>
+        <Swiper indicatorDots autoplay>
+          {[img1, img2, img3].map(img => (<SwiperItem key={img}><Image src={img}/></SwiperItem>))}
+        </Swiper>
+        {listSet.map(item => (
+          <ListItem onClick={this.skipToDetail.bind(this, item)} description={item.description} title={item.title} />))}
       </View>
     )
   }
