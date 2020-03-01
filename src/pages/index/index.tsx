@@ -1,6 +1,6 @@
 import Taro, { Component, Config } from '@tarojs/taro'
 import { View, Text, Swiper, SwiperItem} from '@tarojs/components'
-import ListItem from '../../components/ListItem'
+import GridItem from '../../components/GridItem'
 import LabelTitle from '../../components/LabelTitle'
 import './index.scss'
 import img1 from '../../assert/images/swiper1.jpg'
@@ -49,7 +49,10 @@ export default class Index extends Component {
           {[img1, img2, img3].map(img => (<SwiperItem key={img}><Image src={img}/></SwiperItem>))}
         </Swiper>
         {listSet.map(item => (
-          <ListItem onClick={this.skipToDetail.bind(this, item)} description={item.description} title={item.title} />))}
+          <LabelTitle title={item.title}></LabelTitle>))}
+        {listSet.map(item => (
+          <GridItem onClick={this.skipToDetail.bind(this, item)} description={item.description} title={item.title}
+           key={item.title}></GridItem>))}
       </View>
     )
   }
