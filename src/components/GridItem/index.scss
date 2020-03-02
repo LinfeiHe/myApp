@@ -1,10 +1,10 @@
 .grid-item {
     width: 3.3rem;
     margin-top: .16rem;
-    background-size: 100% 100%;
+    background-size: cover;
     padding: .32rem 0 .32rem .2rem;
     color: #fff;
-    background-image: url(http://gzs.lsjr.ccb.com/msmp/resources/jrxd/assets/img/ic_tiyan_4-1@2x.png);
+    background-image: url('../../assert/images/grid_bg.png');
     .grid-title {
         font-weight: 800;
         font-size: .28rem;

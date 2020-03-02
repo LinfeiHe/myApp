@@ -1,7 +1,38 @@
-.page-section{
-  margin-bottom: 20rpx;
+.cardinfo{
+    background-image: url('../../assert/images/bg.png');
+    background-size: 100% 100%;
+    height: 4.35rem;
+    color: #fff;
+    font-size: .3rem;
+    padding: .1rem .3rem 0;
 }
-.flex-wrp {display: flex;}
-.bc_green {background: green;width:33%; height: 100px;}
-.bc_red {background: red;width:33%; height: 100px;}
-.bc_blue {background: blue;width:33%; height: 100px;}
+
+.activity{
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+  z-index: 1;
+  .swiper-container {
+    width: 100vw;
+    height: 200px;
+  }
+}
+
+.product {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.grid {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: wrap;
+  flex-flow: wrap;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin: 0 .36rem .5rem;
+}

@@ -1,0 +1,66 @@
+.card_components{
+    background-image: url('../../assert/images/card_bg.png');
+    width: 6.2rem;
+    margin: auto;
+    box-shadow: 0 3px 5px 0 hsla(0,0%,60%,.43);
+    border-radius: 3.69px;
+    padding: .36rem .32rem .22rem;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    .person{
+        width: 1.9rem;
+        font-size: .28rem;
+        text-align: center;
+        margin-top: .16rem;
+        .name{
+            -ms-flex-pack: distribute;
+            justify-content: space-around;
+            width: 2rem;
+            .position{
+                font-size: .22rem;
+                margin-left: 3px;
+                margin-top: .06rem;
+            }
+        }
+        .avator{
+            width: 1.9rem;
+            height: 1.9rem;
+            border-radius: 5px;
+            .avator-image{
+                width: 1.9rem;
+                height: 1.9rem;
+                border-radius: 5px;
+            }
+        }
+    }
+    
+    .certificates{
+        width: 3.7rem;
+        font-size: .24rem;
+        .cer-image{
+            width: .56rem;
+            height: .74rem;
+            padding-right: .12rem;
+        }
+    }
+    .description{
+        font-size: .24rem;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        height: .68rem;
+        overflow: hidden;
+        margin-bottom: .32rem;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+    }
+    .call{
+        width: .8rem;
+        height: .8rem;
+        position: absolute;
+        margin-top: 2.3rem;
+        margin-left: 5.6rem;
+    }
+}
