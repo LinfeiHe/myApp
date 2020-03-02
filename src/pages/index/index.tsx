@@ -68,9 +68,7 @@ export default class Index extends Component {
     ]
     return (
       <View className='index'>
-        <View className='cardinfo'>
-          <Card  name={cardInfo.name} avator={cardInfo.avator} certificates={cardInfo.certificates} description={cardInfo.description}></Card>
-        </View>
+       
 
         <LabelTitle title='热门活动'></LabelTitle>
         <View className='activity'>
