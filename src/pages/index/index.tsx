@@ -1,5 +1,6 @@
 import Taro, { Component, Config } from '@tarojs/taro'
 import { View, Text, Swiper, SwiperItem} from '@tarojs/components'
+import Header from '../../components/Header'
 import Card from '../../components/Card'
 import GridItem from '../../components/GridItem'
 import ProductItem from '../../components/ProductItem'
@@ -68,14 +69,15 @@ export default class Index extends Component {
     ]
     return (
       <View className='page'>
-        <View className='cardinfo'>
+        <View className='header-card'>
+          <Header name='龚迪娜' branch='慈溪虞波支行'></Header>
           <Card  name={cardInfo.name} avator={cardInfo.avator} certificates={cardInfo.certificates} description={cardInfo.description}></Card>
         </View>
 
         <LabelTitle title='热门活动'></LabelTitle>
         <View className='activity'>
-        <Swiper className='swiper-container' indicatorColor='#999' indicatorActiveColor='#333' circular indicatorDots autoplay previousMargin='15px' nextMargin='15px'>
-          {swpierSet.map(img => (<SwiperItem key={img}><Image mode="widthFix" src={img}/></SwiperItem>))}
+        <Swiper className='swiper-container' indicatorColor='#999' indicatorActiveColor='#333' circular indicatorDots autoplay>
+          {swpierSet.map(img => (<SwiperItem className='swiper-item' key={img}><Image mode="widthFix" src={img}/></SwiperItem>))}
         </Swiper>
         </View>
 

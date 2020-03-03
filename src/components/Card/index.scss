@@ -1,67 +1,76 @@
 .card_components{
     background-image: url('../../assert/images/card_bg.png');
     background-size: cover;
-    width: 465px;
+    width: 620px;
     margin: auto;
     box-shadow: 0 3px 5px 0 hsla(0,0%,60%,.43);
     border-radius: 3.69px;
-    padding: 27px 24px 16px;
+    padding: 36px 32px 22px;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    .person{
-        width: 15px;
-        font-size: 21px;
+    .left{
+        width: 190px;
+        font-size: 28px;
         text-align: center;
-        margin-top: 12px;
+        margin-top: 16px;
         .name{
+            display: flex;
             -ms-flex-pack: distribute;
             justify-content: space-around;
-            width: 2rem;
+            width: 200px;
             .position{
-                font-size: 17px;
-                margin-left: 6px;
-                margin-top: 5px;
+                font-size: 22px;
+                margin-left: 3px;
+                margin-top: 6px;
             }
         }
         .avator{
-            width: 15px;
-            height: 15px;
-            border-radius: 10px;
+            width: 190px;
+            height: 190px;
+            border-radius: 5px;
             .avator-image{
-                width: 15px;
-                height: 15px;
-                border-radius: 10px;
+                width: 190px;
+                height: 190px;
+                border-radius: 5px;
             }
         }
     }
-    
-    .certificates{
-        width: 248px;
-        font-size: 18px;
-        .cer-image{
-            width: 36px;
-            height: 48px;
-            padding-right: 9px;
+    .right{
+        width: 370px;
+        font-size: 24px;
+        .certificates{
+            padding-top: 16px;
+            padding-bottom: 22px;
+            display: -ms-flexbox;
+            display: flex;
+            overflow: hidden;
+            .cer-image{
+                width: 56px;
+                height: 74px;
+                padding-right: 12px;
+            }
         }
-    }
-    .description{
-        font-size: 18px;
-        -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-        height: 51px;
-        overflow: hidden;
-        margin-bottom: 24px;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-    }
-    .call{
-        width: 60px;
-        height: 60px;
-        position: absolute;
-        margin-top: 173px;
-        margin-left: 420px;
+        .description{
+            font-size: 24px;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            height: 68px;
+            overflow: hidden;
+            margin-bottom: 32px;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+        }
+        .call{
+            position: absolute;
+            margin-top: 190px;
+            margin-left: 300px;
+            .call-img{
+                width: 80px;
+                height: 80px;
+            }
+        }
     }
 }

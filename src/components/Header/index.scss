@@ -1,0 +1,33 @@
+.header_components{
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    font-size: 34px;
+    margin: 10px 0;
+    &__logo{
+        display: flex;
+        flex-direction: column;
+        color: #fff;
+        font-size: 24px;
+        width: 60%;
+        .branch{
+            margin-left: 40px;
+        }
+        .cbb-img{
+            width: 210px;
+            height: 48px;
+        }
+    }
+    &__name{
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -ms-flex-align: center;
+        align-items: center;
+        margin-right: 23px;
+        font-size: 36px;
+    }
+    
+}
