@@ -8,8 +8,10 @@
      const { title, description } = this.props
      return (
        <View className='grid-item'>
-         <View className='grid-title'><Text>{title}</Text></View>
-         <View className='grid-description'><Text>{description}</Text></View>
+         <View className='grid-content'>
+           <View className='grid-title'><Text>{title}</Text></View>
+           <View className='grid-description'><Text>{description}</Text></View>
+         </View>
        </View>
      )
    }

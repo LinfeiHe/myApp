@@ -2,27 +2,27 @@
     border: 1px solid #eaeced;
     margin-left: -1px;
     margin-top: -1px;
-    padding: .1rem .1rem .32rem .32rem;
+    padding: 10px 10px 32px 32px;
     .product-title{
-        width: 3.3rem;
-        margin-top: .1rem;
-        font-size: .28rem;
+        width: 248px;
+        margin-top: 10px;
+        font-size: 21px;
     }
     .product-description{
         color: #666;
-        font-size: .26rem;
+        font-size: 20px;
         padding: 0;
     }
     .product-rate{
-        font-size: .48rem;
+        font-size: 36px;
         display: -ms-flexbox;
         display: flex;
         color: red;
         font-weight: 500;
-        margin-top: .2rem;
+        margin-top: 15px;
         .percent{
-            font-size: .3rem;
-            margin-top: .16rem;
+            font-size: 23px;
+            margin-top: 12px;
         }
     }
     .product-type{
@@ -36,9 +36,9 @@
         border-radius: 0 0 0 4px;
         color: #fff;
         position: absolute;
-        font-size: .2rem;
+        font-size: 15px;
         text-align: center;
-        padding: 3px .24rem;
+        padding: 6px 24px;
         border-radius: 3px;
     }
     }

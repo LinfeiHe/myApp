@@ -1,17 +1,21 @@
 .grid-item {
-    width: 3.3rem;
-    margin-top: .16rem;
-    background-size: cover;
-    padding: .32rem 0 .32rem .2rem;
-    color: #fff;
+    width: 330px;
+    margin-top: 16px;
     background-image: url('../../assert/images/grid_bg.png');
-    .grid-title {
-        font-weight: 800;
-        font-size: .28rem;
+    background-size: cover;
+    .grid-content{
+        padding: 32px 0 32px 20px;
+        color: #fff;
+        
+        .grid-title {
+            font-weight: 800;
+            font-size: 28px;
+        }
+        .grid-description{
+            margin-top: 12px;
+            font-weight: 300;
+            font-size: 24px;
+        }
     }
-    .grid-description{
-        margin-top: .12rem;
-        font-weight: 300;
-        font-size: .24rem;
-    }
+    
 }

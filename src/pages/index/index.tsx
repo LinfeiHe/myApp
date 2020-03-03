@@ -67,14 +67,14 @@ export default class Index extends Component {
       {title: '财富体验', description: '财富诊断，合理规划'},
     ]
     return (
-      <View className='index'>
+      <View className='page'>
         <View className='cardinfo'>
           <Card  name={cardInfo.name} avator={cardInfo.avator} certificates={cardInfo.certificates} description={cardInfo.description}></Card>
         </View>
 
         <LabelTitle title='热门活动'></LabelTitle>
         <View className='activity'>
-        <Swiper className='swiper-container' indicatorColor='#999' indicatorActiveColor='#333' circular indicatorDots autoplay previousMargin='20px' nextMargin='20px'>
+        <Swiper className='swiper-container' indicatorColor='#999' indicatorActiveColor='#333' circular indicatorDots autoplay previousMargin='15px' nextMargin='15px'>
           {swpierSet.map(img => (<SwiperItem key={img}><Image mode="widthFix" src={img}/></SwiperItem>))}
         </Swiper>
         </View>
@@ -94,6 +94,5 @@ export default class Index extends Component {
         </View>
         
       </View>
-    )
   }
 }
