@@ -8,6 +8,16 @@ import LabelTitle from '../../components/LabelTitle'
 import './index.scss'
 
 export default class Index extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      seeMore: false
+    }
+  }
+
+  setSet(obj) {
+    this.setState(obj);
+  }
 
   componentWillMount () { }
 
@@ -29,13 +39,6 @@ export default class Index extends Component {
   config: Config = {
     navigationBarTitleText: '首页'
   }
-
-  skipToDetail({title, description}) {
-    Taro.navigateTo({
-      url: `/pages/detail/index?title=${title}&description=${description}`
-    })
-  }
-
 
   render() {
     const cardInfo = {
@@ -69,14 +72,15 @@ export default class Index extends Component {
     ]
     return (
       <View className='page'>
+        {this.state.seeMore && <View className='see-more'><Text>read-more</Text></View>}
         <View className='header-card'>
           <Header name='龚迪娜' branch='慈溪虞波支行'></Header>
-          <Card  name={cardInfo.name} avator={cardInfo.avator} certificates={cardInfo.certificates} description={cardInfo.description}></Card>
+          <Card  name={cardInfo.name} avator={cardInfo.avator} certificates={cardInfo.certificates} description={cardInfo.description} setSet={this.setSet.bind(this)}></Card>
         </View>
 
         <LabelTitle title='热门活动'></LabelTitle>
         <View className='activity'>
-        <Swiper className='swiper-container' indicatorColor='#999' indicatorActiveColor='#333' circular indicatorDots autoplay>
+        <Swiper className='swiper-container' indicatorColor='#999' indicatorActiveColor='#333' circular indicatorDots autoplay previous-margin='15px' next-margin='15px'>
           {swpierSet.map(img => (<SwiperItem className='swiper-item' key={img}><Image mode="widthFix" src={img}/></SwiperItem>))}
         </Swiper>
         </View>
@@ -84,14 +88,14 @@ export default class Index extends Component {
         <LabelTitle title='精选产品'></LabelTitle>
         <View className='product'>
         {productSet.map(item => (
-          <ProductItem onClick={this.skipToDetail.bind(this, item)} description={item.description} title={item.title}
+          <ProductItem description={item.description} title={item.title}
            rate={item.rate} type={item.type} key={item.title}></ProductItem>))}
         </View>
 
         <LabelTitle title='邀您体验'></LabelTitle>
         <View className='grid'>
         {gridSet.map(item => (
-          <GridItem onClick={this.skipToDetail.bind(this, item)} description={item.description} title={item.title}
+          <GridItem description={item.description} title={item.title}
            key={item.title}></GridItem>))}
         </View>
         

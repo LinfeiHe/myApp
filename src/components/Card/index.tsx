@@ -3,9 +3,14 @@ import { View, Text, Image } from '@tarojs/components'
 import './index.scss'
 
 export default class Card extends Component {
+  seeMore = () =>{
+    this.props.setSet(preState => ({
+      seeMore: !preState.seeMore
+    }))
+  }
 
   render() {
-    const { name, avator, certificates, description } = this.props
+    const { name, avator, certificates, description} = this.props
     const call_image = require('../../assert/images/call.png')
     return (
       <View className='card_components'>
@@ -19,6 +24,7 @@ export default class Card extends Component {
           <View><Text>资格认证证书</Text></View>
           <View className='certificates'>{certificates.map(item => (<Image className='cer-image'  src={item} />))}</View>
           <View className='description'><Text>{description}</Text></View>
+          <View className='read-more' onClick={this.seeMore}><Text>查看更多 >></Text></View>
         </View>
       </View>
     )

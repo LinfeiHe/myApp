@@ -20,6 +20,7 @@
             -ms-flex-pack: distribute;
             justify-content: space-around;
             width: 200px;
+            margin-top: 10px;
             .position{
                 font-size: 22px;
                 margin-left: 3px;
@@ -65,12 +66,21 @@
         }
         .call{
             position: absolute;
-            margin-top: 190px;
+            margin-top: 230px;
             margin-left: 300px;
             .call-img{
                 width: 80px;
                 height: 80px;
             }
+        }
+        .read-more{
+            color: #fff;
+            border-radius: 12.5px;
+            text-align: center;
+            opacity: .35;
+            background: #3c48fa;
+            line-height: 40px;
+            width: 160px;
         }
     }
 }

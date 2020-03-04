@@ -1,5 +1,5 @@
 import Taro, { Component, Config } from '@tarojs/taro'
-import { View, Image} from '@tarojs/components'
+import { View, Text, Image} from '@tarojs/components'
 import './index.scss'
 
 export default class Index extends Component {
@@ -29,7 +29,8 @@ export default class Index extends Component {
     const {title, description} = this.$router.params
     return (
       <View>
-        详情
+        <Text>title: {title}</Text>
+        <Text>description: {description}</Text>
       </View>
     )
   }

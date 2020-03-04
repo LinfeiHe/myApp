@@ -6,6 +6,17 @@
   background: #fff;
 }
 
+.see-more{
+    position: fixed;
+    z-index: 1000;
+    width: 630px;
+    background: #fff;
+    border-radius: 10px;
+    max-height: 60%;
+    overflow: auto;
+    padding: 30px 35px 90px;
+}
+
 .header-card{
     background-image: url('../../assert/images/bg.png');
     background-size: cover;
