@@ -37,6 +37,12 @@ export default class Index extends Component {
    })
   }
 
+  handleModalClicked = () =>{
+    this.setState({
+      seeMore: false
+    })
+  }
+
 
   /**
    * 指定config的类型声明为: Taro.Config
@@ -84,7 +90,7 @@ export default class Index extends Component {
     return (
       <View className='page'>
         {this.state.seeMore && 
-        <View className='see-more'>
+        <View className='see-more' onClick={this.handleModalClicked}>
           <More number='516670' description={cardInfo.description}></More>
           <Image className='cancel-img' src={cancel_image} />
         </View>

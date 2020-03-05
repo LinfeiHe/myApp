@@ -33,7 +33,7 @@ export default class Index extends Component {
     }
     return (
       <View className='detail'>
-        {show &&<Image className='img' src={require('../../assert/images/banner' + url + '.jpg')} />}
+        {show &&<Image className='img' src={require('../../assert/images/banner1.jpg')} />}
         {!show &&<Text>title: {title}</Text>}
         {!show &&<Text>description: {description}</Text>}
       </View>

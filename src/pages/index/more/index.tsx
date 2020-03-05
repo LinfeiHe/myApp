@@ -8,7 +8,7 @@ export default class More extends Component {
     const { number, description} = this.props
     const no_img = require('../../../assert/images/no.png')
     return (
-      <View className='more-content'>
+      <View className='more-content' onClick={(e) => e.stopPropagation()}>
         <View className='more-content-cell'>
             <Image className='no-img' src={no_img} />
             <View className='text-cell'>
