@@ -6,6 +6,7 @@ import GridItem from '../../components/GridItem'
 import ProductItem from '../../components/ProductItem'
 import LabelTitle from '../../components/LabelTitle'
 import More from './more'
+import api from '../../service/api'
 import './index.scss'
 
 export default class Index extends Component {
@@ -13,6 +14,7 @@ export default class Index extends Component {
     super(props);
     this.state = {
       seeMore: false
+      gridSet: []
     }
   }
 
@@ -20,7 +22,7 @@ export default class Index extends Component {
     this.setState(obj);
   }
 
-  componentWillMount () { }
+  componentWillMount () {this.getData() }
 
   componentDidMount () { }
 
@@ -35,6 +37,15 @@ export default class Index extends Component {
     Taro.navigateTo({
      url: `/pages/detail/index?url=${url}`
    })
+  }
+
+  getData = () =>{
+    api.get('/api/mock').then((response) =>{
+      console.log(response.data);
+      this.setState({
+        gridSet:response.data
+      })
+    })
   }
 
   handleModalClicked = () =>{
@@ -79,13 +90,6 @@ export default class Index extends Component {
       {title: '广发科技先锋混合型证券投资基金', description: '近一年净值增长率', rate: '12.65', type: '基金'}
     ]
 
-    const gridSet = [
-      {title: '我要优惠', description: '建行龙支付'},
-      {title: '我要贷款', description: '随借随还，方便快捷'},
-      {title: '信用卡申请', description: '一卡在手，方便所有'},
-      {title: '财富体验', description: '财富诊断，合理规划'},
-    ]
-
     const cancel_image = require('../../assert/images/cancel.png')
     return (
       <View className='page'>
@@ -116,7 +120,7 @@ export default class Index extends Component {
 
         <LabelTitle title='邀您体验'></LabelTitle>
         <View className='grid'>
-        {gridSet.map(item => (
+        {this.state.gridSet.map(item => (
           <GridItem description={item.description} title={item.title}
            key={item.title}></GridItem>))}
         </View>
