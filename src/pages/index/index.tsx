@@ -5,6 +5,7 @@ import Card from '../../components/Card'
 import GridItem from '../../components/GridItem'
 import ProductItem from '../../components/ProductItem'
 import LabelTitle from '../../components/LabelTitle'
+import More from './more'
 import './index.scss'
 
 export default class Index extends Component {
@@ -28,6 +29,14 @@ export default class Index extends Component {
   componentDidShow () { }
 
   componentDidHide () { }
+
+
+  goDetail(url){
+    Taro.navigateTo({
+     url: `/pages/detail/index?url=${url}`
+   })
+  }
+
 
   /**
    * 指定config的类型声明为: Taro.Config
@@ -53,9 +62,9 @@ export default class Index extends Component {
     }
 
     const swpierSet = [
-      require('../../assert/images/swiper1.jpg'),
-      require('../../assert/images/swiper2.png'),
-      require('../../assert/images/swiper3.png')
+      {img: require('../../assert/images/swiper1.jpg'), url: '1'},
+      {img: require('../../assert/images/swiper2.png'), url: '2'},
+      {img: require('../../assert/images/swiper3.png'), url: '3'}
     ]
     const productSet = [
       {title: '代销建信理财睿鑫(2年期)封闭式2020年第6期', description: '业绩比较基准', rate: '4.8', type: '理财'},
@@ -70,9 +79,16 @@ export default class Index extends Component {
       {title: '信用卡申请', description: '一卡在手，方便所有'},
       {title: '财富体验', description: '财富诊断，合理规划'},
     ]
+
+    const cancel_image = require('../../assert/images/cancel.png')
     return (
       <View className='page'>
-        {this.state.seeMore && <View className='see-more'><Text>read-more</Text></View>}
+        {this.state.seeMore && 
+        <View className='see-more'>
+          <More number='516670' description={cardInfo.description}></More>
+          <Image className='cancel-img' src={cancel_image} />
+        </View>
+        }
         <View className='header-card'>
           <Header name='龚迪娜' branch='慈溪虞波支行'></Header>
           <Card  name={cardInfo.name} avator={cardInfo.avator} certificates={cardInfo.certificates} description={cardInfo.description} setSet={this.setSet.bind(this)}></Card>
@@ -81,7 +97,7 @@ export default class Index extends Component {
         <LabelTitle title='热门活动'></LabelTitle>
         <View className='activity'>
         <Swiper className='swiper-container' indicatorColor='#999' indicatorActiveColor='#333' circular indicatorDots autoplay previous-margin='15px' next-margin='15px'>
-          {swpierSet.map(img => (<SwiperItem className='swiper-item' key={img}><Image mode="widthFix" src={img}/></SwiperItem>))}
+          {swpierSet.map((item) => (<SwiperItem className='swiper-item' key={item.img}><Image mode="widthFix" src={item.img} onClick={this.goDetail.bind(this, item.url)}/></SwiperItem>))}
         </Swiper>
         </View>
 

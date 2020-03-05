@@ -4,9 +4,9 @@ import './index.scss'
 
 export default class Card extends Component {
   seeMore = () =>{
-    this.props.setSet(preState => ({
-      seeMore: !preState.seeMore
-    }))
+    this.props.setSet(
+      {seeMore: true}
+    )
   }
 
   render() {

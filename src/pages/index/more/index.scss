@@ -1,0 +1,31 @@
+.more-content{
+    width: 630px;
+    background: #fff;
+    border-radius: 8px;
+    max-height: 60%;
+    overflow: auto;
+    padding: 30px 35px 90px;
+    animation-duration: .3s;
+    animation-fill-mode: both;
+    &-cell{
+        padding-top: 22px;
+        display: -ms-flexbox;
+        display: flex;
+        .no-img{
+            width: 40px;
+            height: 40px;
+        }
+        .text-cell{
+            margin-left: 16px;
+            font-size: 28px;
+            color: #333;
+            width: 100%;
+            .text{
+                padding-top: 16px;
+                padding-bottom: 28px;
+                color: #666;
+                overflow: hidden;
+            }
+        }
+    }
+}

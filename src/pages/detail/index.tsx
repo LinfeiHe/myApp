@@ -26,11 +26,16 @@ export default class Index extends Component {
   }
 
   render() {
-    const {title, description} = this.$router.params
+    const {title, description, url} = this.$router.params
+    let show=true;
+    if (url===undefined){
+      show = false;
+    }
     return (
-      <View>
-        <Text>title: {title}</Text>
-        <Text>description: {description}</Text>
+      <View className='detail'>
+        {show &&<Image className='img' src={require('../../assert/images/banner' + url + '.jpg')} />}
+        {!show &&<Text>title: {title}</Text>}
+        {!show &&<Text>description: {description}</Text>}
       </View>
     )
   }
