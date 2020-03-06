@@ -1,0 +1,4 @@
+同时开启mock和taro后在微信开发者工具查看
+npm run mock
+
+npm run dev:weapp
