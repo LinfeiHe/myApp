@@ -11,7 +11,7 @@ export default class Card extends Component {
 
   render() {
     const { name, avator, certificates, description} = this.props
-    const call_image = require('../../assert/images/call.png')
+    const call_image = 'https://s2.ax1x.com/2020/03/07/3j6YkR.png'
     return (
       <View className='card_components'>
         <View className='left'>

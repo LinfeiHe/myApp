@@ -14,6 +14,9 @@ export default class Index extends Component {
     super(props);
     this.state = {
       seeMore: false,
+      cardInfo: {},
+      swpierSet: [],
+      productSet: [],
       gridSet: []
     }
   }
@@ -43,7 +46,10 @@ export default class Index extends Component {
     api.get('/api/mock').then((response) =>{
       console.log(response.data);
       this.setState({
-        gridSet:response.data
+        cardInfo: response.data.cardInfo,
+        swpierSet: response.data.swpierSet,
+        productSet: response.data.productSet,
+        gridSet:response.data.gridSet
       })
     })
   }
@@ -67,53 +73,31 @@ export default class Index extends Component {
   }
 
   render() {
-    const cardInfo = {
-      name: '龚迪娜',
-      avator: require('../../assert/images/avatar.jpg'),
-      certificates: [
-        require('../../assert/images/littleshow.png'),
-        require('../../assert/images/littleshow.png'),
-        require('../../assert/images/littleshow.png')
-      ],
-      description: '加油宁波！加油浙江！加油武汉！加油中国🇨🇳！！...'
-    }
-
-    const swpierSet = [
-      {img: require('../../assert/images/swiper1.jpg'), url: '1'},
-      {img: require('../../assert/images/swiper2.png'), url: '2'},
-      {img: require('../../assert/images/swiper3.png'), url: '3'}
-    ]
-    const productSet = [
-      {title: '代销建信理财睿鑫(2年期)封闭式2020年第6期', description: '业绩比较基准', rate: '4.8', type: '理财'},
-      {title: '乾元-安鑫(按日)现金管理类开放式净值产品', description: '七日年化收益率', rate: '3.19', type: '理财'},
-      {title: '交银施罗德阿尔法核心混合型证券投资基金', description: '近一年净值增长率', rate: '38.4', type: '基金'},
-      {title: '广发科技先锋混合型证券投资基金', description: '近一年净值增长率', rate: '12.65', type: '基金'}
-    ]
-
-    const cancel_image = require('../../assert/images/cancel.png')
+    const cancel_image = 'https://s2.ax1x.com/2020/03/07/3j680J.png'
     return (
       <View className='page'>
         {this.state.seeMore && 
         <View className='see-more' onClick={this.handleModalClicked}>
-          <More number='516670' description={cardInfo.description}></More>
+          <More number='516670' description={this.state.cardInfo.description}></More>
           <Image className='cancel-img' src={cancel_image} />
         </View>
         }
         <View className='header-card'>
           <Header name='龚迪娜' branch='慈溪虞波支行'></Header>
-          <Card  name={cardInfo.name} avator={cardInfo.avator} certificates={cardInfo.certificates} description={cardInfo.description} setSet={this.setSet.bind(this)}></Card>
+          <Card  name={this.state.cardInfo.name} avator={this.state.cardInfo.avator} certificates={this.state.cardInfo.certificates} 
+          description={this.state.cardInfo.description} setSet={this.setSet.bind(this)}></Card>
         </View>
 
         <LabelTitle title='热门活动'></LabelTitle>
         <View className='activity'>
-        <Swiper className='swiper-container' indicatorColor='#999' indicatorActiveColor='#333' circular indicatorDots autoplay previous-margin='15px' next-margin='15px'>
-          {swpierSet.map((item) => (<SwiperItem className='swiper-item' key={item.img}><Image mode="widthFix" src={item.img} onClick={this.goDetail.bind(this, item.url)}/></SwiperItem>))}
+        <Swiper className='swiper-container' indicatorColor='#999' indicatorActiveColor='#333' circular indicatorDots autoplay>
+          {this.state.swpierSet.map((item) => (<SwiperItem className='swiper-item' key={item.img}><Image mode="widthFix" src={item.img} onClick={this.goDetail.bind(this, item.url)}/></SwiperItem>))}
         </Swiper>
         </View>
 
         <LabelTitle title='精选产品'></LabelTitle>
         <View className='product'>
-        {productSet.map(item => (
+        {this.state.productSet.map(item => (
           <ProductItem description={item.description} title={item.title}
            rate={item.rate} type={item.type} key={item.title}></ProductItem>))}
         </View>
